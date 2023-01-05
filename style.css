@@ -48,20 +48,11 @@ body {
 
 
 .content {
+    padding: 0px 300px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-}
-
-.book-card {
-    padding: 20px;
-
-    width: 350px;
-    height: 500px;
-    
-    border-radius: 40px;
-    box-shadow: 16px 16px 32px #a3a3a3, -16px -16px 32px #dadada;
 }
 
 /*modal*/
@@ -142,3 +133,100 @@ body {
     align-items: center;
 }
 
+
+/*book cards*/
+.book-card {
+    padding: 20px 4px;
+    width: 400px;
+    height: fit-content;
+    
+    border-radius: 40px;
+    box-shadow: 16px 16px 32px #a3a3a3, -16px -16px 32px #dadada;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-content {
+    width: 300px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: start;
+    align-items: start;
+}
+
+.card-title {
+    word-break: break-word;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 34px;
+    color: #494747;
+}
+
+.card-author,
+.card-page-number {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    color:#494747;
+}
+
+.card-actions {
+    margin-bottom: 10px;
+    width: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4px;
+}
+
+.card-status-button {
+    width: 250px;
+    height: 46px;
+    border-style: none;
+    border-radius: 10cm;
+
+    font-size: 20px;
+    color: white;
+    background-color: rgb(246, 182, 22, .8);
+    box-shadow: 5px 5px 10px #898989, -5px -5px 10px #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.card-status-button:hover {
+    background-color: #494747;
+}
+
+.book-icon {
+    width: 28px;
+}
+
+.delete-card-button {
+    width: 46px;
+    height: 46px;
+
+    border-style: none;
+    border-radius: 50%;
+    background-color: #5b5b5b;
+    box-shadow: 5px 5px 10px #898989, -5px -5px 10px #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-card-button:hover {
+    background-color: #DF4545;
+}
+
+.trash-icon {
+    width: 28px;
+}
