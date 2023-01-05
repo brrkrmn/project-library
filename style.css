@@ -17,7 +17,7 @@ body {
     gap: 24px;
 }
 
-h1 {
+.page-title {
     margin: 0px;
     padding-left: 16px;
 
@@ -27,14 +27,14 @@ h1 {
     color:#494747;
 }
 
-.header > button {
+.new-book-button {
     width: 300px;
     height: 60px;
 
     background: #e0e0e0;
     border-style: none;
     border-radius: 20px;
-    box-shadow:  8px 8px 27px #727272, -8px -8px 27px #ffffff;
+    box-shadow: 8px 8px 27px #727272, -8px -8px 27px #ffffff;
 
     text-align: center;
     font-size: 20px;
@@ -42,9 +42,10 @@ h1 {
     color:#494747;
 }
 
-.header > button:hover {
+.new-book-button:hover {
     background-color: #c7c7c7;
 }
+
 
 .content {
     display: flex;
@@ -60,7 +61,7 @@ h1 {
     height: 500px;
     
     border-radius: 40px;
-    box-shadow:  16px 16px 32px #a3a3a3, -16px -16px 32px #dadada;
+    box-shadow: 16px 16px 32px #a3a3a3, -16px -16px 32px #dadada;
 }
 
 /*modal*/
@@ -77,7 +78,7 @@ h1 {
     text-align: center;
 }
 
-form {
+.new-book-form {
     position: relative;
     width: 300px;
     height: 350px;
@@ -93,21 +94,27 @@ form {
     gap: 20px;
 }
 
-input {
+.form-input {
+    padding-left: 20px;
     width: 250px;
     height: 60px;
 
     border-style: none;
     border-radius: 20px;
-
-    padding-left: 20px;
+    box-shadow: inset 5px 5px 10px #b3b3b3, inset -5px -5px 10px #ffffff;
 }
 
 #read-status {
-    width: 36px;
+    width: 20px;
+    box-shadow: none;
+    accent-color: #5b5b5b;
 }
 
-form > button {
+.checkbox {
+    vertical-align: middle;
+}
+
+.add-book-button {
     width: 140px;
     height: 60px;
     
@@ -121,10 +128,13 @@ form > button {
     background-color: #5b5b5b;
 }
 
-label {
+.checkbox-label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #5b5b5b;
 }
 
-[type=checkbox] {
-    vertical-align: middle;
+.checkbox {
+    display: flex;
+    align-items: center;
 }
+

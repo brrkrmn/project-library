@@ -8,8 +8,8 @@
 
     <body>
         <div class="header">
-            <h1>Library</h1>
-            <button>Add Book</button>
+            <h1 class="page-title">Library</h1>
+            <button class="new-book-button">New Book</button>
         </div>
         <div class="content">
             <div class="book-card">1</div>
@@ -17,15 +17,15 @@
             <div class="book-card">3</div>
         </div>
         <div class="modal-overlay">
-            <form action="" method="post">
-                <input type="text" id="book-title" name="book-title" placeholder="Book Title">
-                <input type="text" id="book-autor" name="book-author" placeholder="Author">
-                <input type="number" id="book-page-number" name="book-page-number" placeholder="Page Number">
-                <div>
-                    <label for="read-status">Have you read it?</label>
-                    <input type="checkbox" id="read-status" name="read-status">
+            <form action="" method="post" class="new-book-form">
+                <input class="form-input" type="text" id="book-title" name="book-title" placeholder="Book Title">
+                <input class="form-input" type="text" id="book-autor" name="book-author" placeholder="Author">
+                <input class="form-input" type="number" id="book-page-number" name="book-page-number" placeholder="Page Number">
+                <div class="checkbox">
+                    <label class="checkbox-label" for="read-status">Have you read it?</label>
+                    <input class="form-input" type="checkbox" id="read-status" name="read-status">
                 </div>
-                <button type="submit">Add Book</button>
+                <button class="add-book-button" type="submit">Add Book</button>
             </form>
         </div>
         <script src="index.js"></script>
