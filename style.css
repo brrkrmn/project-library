@@ -123,6 +123,10 @@ body {
     background-color: #5b5b5b;
 }
 
+.add-book-button:hover {
+    background-color: #494747;
+}
+
 .checkbox-label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #5b5b5b;
@@ -192,7 +196,7 @@ body {
 
     font-size: 20px;
     color: white;
-    background-color: rgb(246, 182, 22, .8);
+    background-color: #f6b616cc;
     box-shadow: 5px 5px 10px #898989, -5px -5px 10px #ffffff;
 
     display: flex;
