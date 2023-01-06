@@ -28,6 +28,15 @@ function changeReadStatus() {
     }
 }
 
+function deleteCard() {
+    const deleteCardButton = document.querySelectorAll(".delete-card-button");
+    for (let i = 0; i < deleteCardButton.length; i++) {
+        deleteCardButton[i].addEventListener("click", () => {
+            deleteCardButton[i].parentElement.parentElement.remove();
+        });
+    }
+}
+
 function Book(title, author, page, status) {
     this.title = title
     this.author = author 
@@ -50,6 +59,8 @@ function addBookToLibrary() {
         document.querySelector(".new-book-form").reset();
         showBookCard();
         addBookInfoToCard(userLibrary);
+        deleteCard();
+        changeReadStatus();
         console.log(book);
     });
 }
@@ -80,4 +91,3 @@ const modalOverlay = document.querySelector(".modal-overlay")
 openModal();
 closeModal();
 addBookToLibrary();
-changeReadStatus();
