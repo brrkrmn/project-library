@@ -43,45 +43,34 @@ function addBookToLibrary() {
         let title = document.getElementById("book-title").value;
         let author = document.getElementById("book-author").value;
         let page = document.getElementById("book-page-number").value;
-        let status = document.getElementById("read-status").value;
+        let status = document.getElementById("read-status").checked;
         const book = new Book(title, author, page, status);
         userLibrary.push(book);
         modal.style.display = 'none';
-        showBookCard(book);
+        document.querySelector(".new-book-form").reset();
+        showBookCard();
+        addBookInfoToCard(userLibrary);
+        console.log(book);
     });
 }
 
-function showBookCard(book) {
-    const bookCard = document.createElement("Div");
-    bookCard.classList.add("book-card");
+function showBookCard() {
+    const sampleCard = document.querySelector(".sample-book-card");
+    const cardClone = sampleCard.cloneNode(true);
+    cardClone.classList.remove("sample-book-card");
+    document.querySelector(".content").appendChild(cardClone);
+}
 
-    const cardContent = document.createElement("Div");
-    cardContent.classList.add("card-content");
-
-    const cardActions = document.createElement("Div");
-    cardActions.classList.add("card-actions");
-
-    const cardTitle = document.createElement("Div");
-    cardTitle.classList.add("card-title");
-
-    const cardAuthor = document.createElement("Div");
-    cardAuthor.classList.add("card-author");
-
-    const cardPageNumber = document.createElement("Div");
-    cardPageNumber.classList.add("card-page-number");
-
-    const cardStatusButton = document.createElement("Button");
-    cardStatusButton.classList.add("card-status-button");
-
-    document.querySelector(".content").appendChild(bookCard);
-    bookCard.appendChild(cardContent);
-    bookCard.appendChild(cardActions);
-
-    cardContent.appendChild(cardTitle);
-    cardContent.appendChild(cardAuthor);
-    cardContent.appendChild(cardPageNumber);
-
-    cardActions.appendChild(cardStatusButton);
+function addBookInfoToCard(userLibrary) {
+    let lastBook = userLibrary[userLibrary.length-1];
+    const lastCard = document.querySelector(".content").lastChild;
+    lastCard.querySelector(".card-title").textContent = lastBook.title;
+    lastCard.querySelector(".card-author").textContent = lastBook.author;
+    lastCard.querySelector(".card-page-number").textContent = lastBook.page;
+    if (lastBook.status === false) {
+        lastCard.querySelector(".card-status-button").style.backgroundColor = "#DF4545";
+        lastCard.querySelector(".status-text").textContent = "Not Read";
+    }
 }
 
 const modal = document.querySelector(".modal-page");
@@ -90,5 +79,5 @@ const modalOverlay = document.querySelector(".modal-overlay")
 
 openModal();
 closeModal();
-changeReadStatus();
 addBookToLibrary();
+changeReadStatus();
